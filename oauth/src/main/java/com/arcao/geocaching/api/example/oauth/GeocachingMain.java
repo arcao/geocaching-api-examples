@@ -14,7 +14,7 @@ import com.arcao.geocaching.api.impl.LiveGeocachingApi;
 
 public class GeocachingMain {
 	// Please DO NOT USE this keys in production. It's only for testing!!!
-	// Ask Groudspeak for your own keys
+	// Ask Groudspeak for your own keys, see: http://www.geocaching.com/live/apidevelopers/
 	// put you Geocaching api consumer key here
 	public static final String OAUTH_CONSUMER_KEY = "90C7F340-7998-477D-B4D3-AC48A9A0F560";
 	// put you Geocaching api consumer secret here
@@ -49,7 +49,7 @@ public class GeocachingMain {
 
 		System.out.println("Now visit:\n" + authUrl + "\n... and grant this app authorization");
 
-		// after you allow the access you'll get something like (callback url + authorization parameters):
+		// after you allow the access you'll get move to URL like (callback url + authorization parameters):
 		// x-geocaching-api://oauth.callback/callback?oauth_verifier=...&oauth_token=...
 		// put oauth_verifier bellow (beware! must be URL decoded)
 		System.out.println("Enter the oauth_verifier and hit ENTER when you're done:");
@@ -65,7 +65,7 @@ public class GeocachingMain {
 		System.out.println("Token secret: " + consumer.getTokenSecret());
 
 		// create Geocaching API instance
-		GeocachingApi api = new LiveGeocachingApi(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET);
+		GeocachingApi api = new LiveGeocachingApi();
 
 		// now for Geocaching API use access token as a session token
 		// Note: Save this token for later usage, it wouldn't have expire. Token can expire only 
