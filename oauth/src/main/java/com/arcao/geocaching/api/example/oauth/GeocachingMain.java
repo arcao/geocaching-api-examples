@@ -13,18 +13,15 @@ import com.arcao.geocaching.api.data.SimpleGeocache;
 import com.arcao.geocaching.api.impl.LiveGeocachingApi;
 
 public class GeocachingMain {
-	// Please DO NOT USE this keys in production. It's only for testing!!!
 	// Ask Groudspeak for your own keys, see: http://www.geocaching.com/live/apidevelopers/
-	// put you Geocaching api consumer key here
-	public static final String OAUTH_CONSUMER_KEY = "90C7F340-7998-477D-B4D3-AC48A9A0F560";
-	// put you Geocaching api consumer secret here
-	public static final String OAUTH_CONSUMER_SECRET = "55BBC3C1-24CF-4D1B-B7EC-7A8E75DAB7D1";
+	public static final String OAUTH_CONSUMER_KEY = "put you Geocaching api consumer key here";
+	public static final String OAUTH_CONSUMER_SECRET = "put you Geocaching api consumer secret here";
 
 	// There are URLs for production mode, in testing mode can be different (see your
 	// e-mail from Groundspeak) 
-	public static final String OAUTH_REQUEST_URL = "http://www.geocaching.com/oauth/mobileoauth.ashx";
-	public static final String OAUTH_ACCESS_URL = "http://www.geocaching.com/oauth/mobileoauth.ashx";
-	public static final String OAUTH_AUTHORIZE_URL = "http://www.geocaching.com/oauth/mobileoauth.ashx";
+	public static final String OAUTH_REQUEST_URL = "https://www.geocaching.com/oauth/mobileoauth.ashx";
+	public static final String OAUTH_ACCESS_URL = "https://www.geocaching.com/oauth/mobileoauth.ashx";
+	public static final String OAUTH_AUTHORIZE_URL = "https://www.geocaching.com/oauth/mobileoauth.ashx";
 
 	// please use your own callback url (change protocol for example) if you want
 	// capture oauth_verifier
