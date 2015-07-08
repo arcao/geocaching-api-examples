@@ -84,8 +84,8 @@ public class GeocachingMain {
 		System.out.println("Sending request to Geocaching...");
 
 		// get a geocache
-		final Geocache cache = api.getCache(GeocachingApi.ResultQuality.LITE, GEOCACHE_CODE, 0, 0);
+		final Geocache cache = api.getGeocache(GeocachingApi.ResultQuality.LITE, GEOCACHE_CODE, 0, 0);
 
-		System.out.println("GetCacheSimple response: " + cache.toString());
+		System.out.println("Response: " + cache.toString());
 	}
 }
