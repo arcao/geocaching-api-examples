@@ -2,7 +2,6 @@ package com.arcao.geocaching.api.example.oauth;
 
 import com.arcao.geocaching.api.GeocachingApi;
 import com.arcao.geocaching.api.LiveGeocachingApi;
-import com.arcao.geocaching.api.configuration.impl.DefaultStagingGeocachingApiConfiguration;
 import com.arcao.geocaching.api.data.Geocache;
 import com.arcao.geocaching.api.example.oauth.provider.GeocachingOAuthProvider;
 import com.arcao.geocaching.api.exception.GeocachingApiException;
@@ -14,6 +13,7 @@ import com.github.scribejava.core.oauth.OAuth10aService;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.ExecutionException;
 
 public final class GeocachingMain {
     // Ask Groundspeak for your own keys, see: http://www.geocaching.com/live/apidevelopers/
@@ -31,8 +31,7 @@ public final class GeocachingMain {
     }
 
     private static OAuth10aService createOAuthService() {
-        ServiceBuilder serviceBuilder = new ServiceBuilder()
-                .apiKey(OAUTH_CONSUMER_KEY)
+        ServiceBuilder serviceBuilder = new ServiceBuilder(OAUTH_CONSUMER_KEY)
                 .apiSecret(OAUTH_CONSUMER_SECRET)
                 .callback(OAUTH_CALLBACK_URL)
                 .debug();
@@ -42,7 +41,7 @@ public final class GeocachingMain {
     }
 
 
-    public static void main(String[] args) throws IOException, GeocachingApiException {
+    public static void main(String[] args) throws IOException, GeocachingApiException, ExecutionException, InterruptedException {
 
         OAuth10aService service = createOAuthService();
 
